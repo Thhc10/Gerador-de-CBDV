@@ -18,7 +18,7 @@ while True:  # Loop
     parametros = {"ccbNumber": read_ccb}
     
     # Link da API
-    dadosgeral = requests.get('xxxxxxxxxxxxxx', params=parametros)
+    dadosgeral = requests.get('link_api1', params=parametros)
     status_api = dadosgeral.status_code
 
     # Verificar status da API 1
@@ -35,7 +35,7 @@ while True:  # Loop
     for i in range(len(dadosdocument)):
     
         # Inserir o link da API
-        link = "link_api" + read_ccb + "/" + str(dadosdocument[i][0]).lstrip("b'").strip("'")
+        link = "link_api2" + read_ccb + "/" + str(dadosdocument[i][0]).lstrip("b'").strip("'")
 
         print(link)
 
