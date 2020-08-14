@@ -31,7 +31,6 @@ while True:  # Loop
     dadosjson = dadosgeral.json()
 
     # document é o número referente a cada investidor em um determinado projeto
-
     dadosdocument = document(dadosjson)
 
     for i in range(len(dadosdocument)):
@@ -53,7 +52,6 @@ while True:  # Loop
         dadosespecificojson = dadosespecifico.json()
         
         # Converter b64 em PDF
-
         b64 = dadosespecificojson["pdfDocument"].strip('data:application/pdf;base64,')
 
         arq = b64decode(b64, validate=True)
