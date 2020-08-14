@@ -2,6 +2,7 @@ from base64 import b64decode
 import requests
 import numpy as np
 
+# Criação da matriz
 def document(dados):
     tam = len(dados["cdbv"])
     vetor = np.empty([tam, 2], dtype="S20")
@@ -11,6 +12,7 @@ def document(dados):
         vetor[a][1] = dados["cdbv"][a]["nameOrCompany"]
 
     return vetor
+
 
 while True:  # Loop
     read_ccb = input("CCB: \n")
@@ -49,6 +51,8 @@ while True:  # Loop
             continue
 
         dadosespecificojson = dadosespecifico.json()
+        
+        # Converter b64 em PDF
 
         b64 = dadosespecificojson["pdfDocument"].strip('data:application/pdf;base64,')
 
